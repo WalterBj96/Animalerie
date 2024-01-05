@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste animal</title>
+</head>
+<body>
+    <h1>Liste animal</h1>
+    <ul>
+        {% for animal in animaux %}
+        <li>{{animal.nom}} - {{animal.type}} - {{animal.age}}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Formulaire d'ajout d'animaux</h1>
+    <form action="/ajouterAnimal" method="POST">
+        <label for="nom">Nom :</label>
+        <input type="nom" id="nom" name="nom" required><br>
+        
+        <label for="type">Type :</label>
+        <input type="type" id="type" name="type" required><br>
+        
+        <label for="age">Age :</label>
+        <input type='age' id="age" name="age" required><br>
+        
+        <input type="submit" value="Ajouter l'animal">
+    </form>
+    
+    <div>
+        <a href="{{url_for('index')}}"><input type="submit" value="Menu principal"></a>
+    </div>
+</body>
+</html>
